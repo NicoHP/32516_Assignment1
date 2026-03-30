@@ -1,0 +1,27 @@
+{
+  "name": "32516_assignment1",
+  "version": "1.0.0",
+  "description": "This is the First Assignment for 32516 Internet Programming.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoHP/32516_Assignment1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/NicoHP/32516_Assignment1/issues"
+  },
+  "homepage": "https://github.com/NicoHP/32516_Assignment1#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.3"
+  }
+}
