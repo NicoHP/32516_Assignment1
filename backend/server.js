@@ -58,9 +58,9 @@ app.post('/api/cart', async (req,res) => {
 });
 
 // UPDATE: edit quantity of cart item
-app.put('/api/cart/:id', async (req,res) => {
+app.put('/api/cart/:id', async (req, res) => {
     const { quantity } = req.body;
-    const item = await CartItem.findByIdAndUpdate(req.params.id, { quantity }, { new: true});
+    const item = await CartItem.findByIdAndUpdate(req.params.id, { quantity }, { returnDocument: 'after' });
     res.json(item);
 });
 
