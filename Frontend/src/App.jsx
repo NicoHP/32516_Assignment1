@@ -5,7 +5,7 @@ const API_URL = 'http://localhost:5000/api';
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState(0);
+  const [cart, setCart] = useState([]);
   const [error, setError] = useState(null); // Added error state for debugging
 
   // fetch data when load
@@ -69,7 +69,7 @@ function App() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quantity: newQuantity })
     });
-    fetchCart(); 
+    fetchCart();
   };
 
   // DELETE: remove from cart
@@ -82,6 +82,11 @@ function App() {
 
   console.log("Current Products State:", products);
   console.log("Current Cart State:", cart);
+
+  // calculate price
+  const cartTotal = Array.isArray(cart)
+    ? cart.reduce((sum, item) => sum + ((item.productId?.price || 0) * item.quantity), 0)
+    : 0;
 
   //UI
   return (
@@ -116,22 +121,31 @@ function App() {
           {(!Array.isArray(cart) || cart.length === 0) ? (
             <p className="empty-cart">Your cart is empty.</p>
           ) : (
-            <div className="cart-list">
-              {Array.isArray(cart) && cart.map(item => (
-                <div key={item._id} className="cart-item">
-                  <div className="item-details">
-                    <p className="item-name">{item.productId?.name || "Unknown Item"}</p>
-                    <p className="item-price">${item.productId?.price?.toFixed(2) || "0.00"}</p>
+            <>
+              <div className="cart-list">
+                {Array.isArray(cart) && cart.map(item => (
+                  <div key={item._id} className="cart-item">
+                    {/* ... your existing cart item code ... */}
+                    <div className="item-details">
+                      <p className="item-name">{item.productId?.name || "Unknown Item"}</p>
+                      <p className="item-price">${item.productId?.price?.toFixed(2) || "0.00"}</p>
+                    </div>
+                    <div className="item-controls">
+                      <button onClick={() => updateQuantity(item._id, item.quantity - 1)}>-</button>
+                      <span className="quantity">{item.quantity}</span>
+                      <button onClick={() => updateQuantity(item._id, item.quantity + 1)}>+</button>
+                      <button onClick={() => removeFromCart(item._id)} className="remove-btn">Remove</button>
+                    </div>
                   </div>
-                  <div className="item-controls">
-                    <button onClick={() => updateQuantity(item._id, item.quantity - 1)}>-</button>
-                    <span className="quantity">{item.quantity}</span>
-                    <button onClick={() => updateQuantity(item._id, item.quantity + 1)}>+</button>
-                    <button onClick={() => removeFromCart(item._id)} className="remove-btn">Remove</button>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+
+              { }
+              <div className="cart-summary" style={{ marginTop: '20px', paddingTop: '20px', borderTop: '2px solid #edf2f7', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <h3 style={{ margin: 0 }}>Total:</h3>
+                <h3 style={{ margin: 0, color: '#48bb78' }}>${cartTotal.toFixed(2)}</h3>
+              </div>
+            </>
           )}
         </aside>
       </main>
