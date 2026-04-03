@@ -6,7 +6,7 @@ const API_URL = 'http://localhost:5000/api';
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  const [error, setError] = useState(null); // Added error state for debugging
+  const [error, setError] = useState(null); // added error state for debugging
 
   // fetch data when load
   useEffect(() => {
@@ -15,14 +15,12 @@ function App() {
   }, []);
 
   // api calls using fetch
-
   const fetchProducts = async () => {
     try {
       const res = await fetch(`${API_URL}/products`);
       if (!res.ok) throw new Error("Backend connection failed");
       const data = await res.json();
 
-      // force it to be an array
       setProducts(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error("Error fetching products:", err);
@@ -88,7 +86,7 @@ function App() {
     ? cart.reduce((sum, item) => sum + ((item.productId?.price || 0) * item.quantity), 0)
     : 0;
 
-  //UI
+  // UI
   return (
     <div className="app-container">
       <header className="app-header">
@@ -139,7 +137,7 @@ function App() {
                   </div>
                 ))}
               </div>
-
+              
               { }
               <div className="cart-summary" style={{ marginTop: '20px', paddingTop: '20px', borderTop: '2px solid #edf2f7', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h3 style={{ margin: 0 }}>Total:</h3>
