@@ -29,6 +29,7 @@ This project implements a dynamic, Single-Page Application (SPA) designed to sim
 * **Responsive UI:** Mobile-first layout adaptations using modern CSS practices.
 
 ## 4. Folder Structure
+```
 32516——Assignment1/
 │
 ├── backend/
@@ -44,7 +45,7 @@ This project implements a dynamic, Single-Page Application (SPA) designed to sim
         ├── App.jsx        # Main application logic and API integration
         ├── App.css        # Global styles and UI layout
         └── main.jsx       # React DOM rendering
-
+```
 ## 5. Installation & Setup Instructions
 Prerequisites
 
