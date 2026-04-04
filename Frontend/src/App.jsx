@@ -147,7 +147,7 @@ function App() {
 
               {}
               <button className="checkout-btn" onClick={() => setShowPopup(true)}>
-                Proceed to Checkout
+                Checkout
               </button>
             </>
           )}
@@ -158,8 +158,8 @@ function App() {
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-content">
-            <h2>Checkout</h2>
-            <p>Coming Soon!</p>
+            <h2>Proceed to Checkout</h2>
+            <p>This Feature is Coming Soon!</p>
             <button onClick={() => setShowPopup(false)}>Close</button>
           </div>
         </div>
