@@ -7,6 +7,7 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [error, setError] = useState(null); // added error state for debugging
+  const [showPopup, setShowPopup] = useState(false);
 
   // fetch data when load
   useEffect(() => {
@@ -137,16 +138,32 @@ function App() {
                   </div>
                 ))}
               </div>
-              
+
               { }
               <div className="cart-summary" style={{ marginTop: '20px', paddingTop: '20px', borderTop: '2px solid #edf2f7', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h3 style={{ margin: 0 }}>Total:</h3>
                 <h3 style={{ margin: 0, color: '#48bb78' }}>${cartTotal.toFixed(2)}</h3>
               </div>
+
+              {}
+              <button className="checkout-btn" onClick={() => setShowPopup(true)}>
+                Proceed to Checkout
+              </button>
             </>
           )}
         </aside>
       </main>
+
+      { }
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h2>Checkout</h2>
+            <p>Coming Soon!</p>
+            <button onClick={() => setShowPopup(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
