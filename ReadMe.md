@@ -21,7 +21,7 @@ This project implements a dynamic, Single-Page Application (SPA) designed to sim
 
 ## 3. Core Features
 * **True SPA Behavior:** Zero page reloads; dynamic DOM rendering based on state.
-* **Full CRUD Implementation:
+* **Full CRUD Implementation:**
   * **Create:** Add new items to the shopping cart.
   * **Read:** Fetch product catalogs and current cart states from the database.
   * **Update:** Modify existing cart item quantities.
