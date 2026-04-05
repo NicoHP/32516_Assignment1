@@ -71,6 +71,8 @@ Prerequisites
 
 * Open a terminal and navigate to the backend directory.
 
+    `cd backend`
+
 * Install the required dependencies:
 
     `npm install`
@@ -91,6 +93,8 @@ Prerequisites
 **Step 3:** Frontend Setup
 
 * Open a new terminal window and navigate to the frontend directory.
+
+    `cd frontend`
 
 * Install the required dependencies:
 
