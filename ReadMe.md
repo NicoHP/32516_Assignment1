@@ -76,10 +76,10 @@ Prerequisites
     `npm install`
 
 * Create a .env file in the root of the backend folder and add your connection string:
-
-    `PORT=5000`
-    `MONGO_URI=mongodb://127.0.0.1:27017/shopping-cart`
-
+```
+    PORT=5000
+    MONGO_URI=mongodb://127.0.0.1:27017/shopping-cart
+```
 * Seed the database with initial product data (run this only once):
 
     `node seed.js`
