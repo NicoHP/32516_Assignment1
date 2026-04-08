@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "69d0b459710fd486eabc2e1a"
+  },
+  "name": "Wireless Headphones",
+  "price": 299.99,
+  "image": "/images/headphone.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69d0b459710fd486eabc2e1b"
+  },
+  "name": "Mechanical Keyboard",
+  "price": 129.99,
+  "image": "/images/keyboard.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69d0b459710fd486eabc2e1c"
+  },
+  "name": "Mouse",
+  "price": 79.99,
+  "image": "/images/mouse.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69d0b459710fd486eabc2e1d"
+  },
+  "name": "27-inch 4K Monitor",
+  "price": 449.99,
+  "image": "/images/monitor.png",
+  "__v": 0
+}]
